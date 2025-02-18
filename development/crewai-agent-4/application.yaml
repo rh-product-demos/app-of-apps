@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crewai-agent-4
+  namespace: openshift-gitops
+  labels:
+    environment: development
+    component: crewai-agent-4
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rh-product-demos/crewai-agent-4-manifests.git
+    targetRevision: main
+    path: development
+  destination:
+    server: https://kubernetes.default.svc
+    namespace:crewai-agent-4-development
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
