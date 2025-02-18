@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: crewai-agent-4
-  namespace: argocd
+  namespace: openshift-gitops
   labels:
     environment: development
     component: crewai-agent-4
