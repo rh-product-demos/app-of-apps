@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: crewai-agent-4
+  name: crewai-agent
   namespace: openshift-gitops
   labels:
     environment: development
-    component: crewai-agent-4
+    component: crewai-agent
 spec:
   project: default
   source:
@@ -14,7 +14,7 @@ spec:
     path: development
   destination:
     server: https://kubernetes.default.svc
-    namespace: crewai-agent-4-development
+    namespace: crewai-agent-development
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
