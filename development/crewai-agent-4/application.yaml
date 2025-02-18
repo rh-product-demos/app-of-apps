@@ -14,7 +14,7 @@ spec:
     path: development
   destination:
     server: https://kubernetes.default.svc
-    namespace:crewai-agent-4-development
+    namespace: crewai-agent-4-development
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
