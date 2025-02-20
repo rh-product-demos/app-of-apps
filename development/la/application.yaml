@@ -14,7 +14,7 @@ spec:
     path: development
   destination:
     server: https://kubernetes.default.svc
-    namespace:la-development
+    namespace: la-development
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
