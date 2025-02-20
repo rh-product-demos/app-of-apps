@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: la
+  namespace: openshift-gitops
+  labels:
+    environment: development
+    component: la
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rh-product-demos/la-manifests.git
+    targetRevision: main
+    path: development
+  destination:
+    server: https://kubernetes.default.svc
+    namespace:la-development
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
